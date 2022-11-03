@@ -1,0 +1,77 @@
+<html>
+    <head>
+<body>
+       <center><h1>Donor's Form List</h1></center>
+      <center><form action="/donate" method="post" autocomplete="off">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Post</button>
+
+    </form></center>
+        <style>
+
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+              }
+              
+              td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+              }
+              
+              tr:nth-child(even) {
+                background-color: #dddddd;
+              }
+
+
+        </style>
+
+    
+    
+    <center><h1>Donor's List Table</h1></center>
+
+    <table>
+      <thead>
+        <tr>
+            <th>S.no</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Area</th>
+            <th>Blood Type</th>
+            <th>Mobile No</th>
+        </tr>
+      </thead>
+      {%  for  data in datas %}
+      <tbody>
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{data.Name}}</td>
+            <td>{{data.City}}</td>
+            <td>{{data.Area}}</td>
+            <td>{{data.Type}}</td>
+            <td>{{data.Mobile}}</td>
+            
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table><br><br>
+
+
+     <form action="/" >
+
+      <center><button type="submit"> Back to Home </button></center>
+
+
+     </form>
+       
+    
+</body>
+</head>
+
+
+</html>

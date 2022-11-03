@@ -1,0 +1,360 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Blood Donate</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap' %}" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawsom-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/grid-gallery/css/grid-gallery.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}" />
+</head>
+
+<body>
+        <header class="continer-fluid ">
+            <div class="header-top">
+                <div class="container">
+                    <div class="row col-det">
+                        <div class="col-lg-6 d-none d-lg-block">
+                            <ul class="ulleft">
+                                <li>
+                                    <i class="far fa-envelope"></i>
+                                    ashikcareer6444@gmail.com
+                                    <span>|</span></li>
+                                <li>
+                                    <i class="far fa-clock"></i>
+                                    Service Time : 24 hrs</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <ul class="ulright">
+                                <li>
+                                    {% if user.is_authenticated %}
+									<li>Hello,  {{user.username}}</li>
+                                    <li><a href="{% url 'logout' %}"style="color: white">Logout</a> </li>
+
+                                    {% else %}
+
+                                    <a  href="{% url 'register' %}" style="color:white">Register</a>
+                                        <span>|</span><span>   </span>
+                                    <a  href="{% url 'login' %}" style="color:white">Login</a>
+
+                                    {% endif %}
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="menu-jk" class="header-bottom">
+                <div class="container">
+                    <div class="row nav-row">
+                        <div class="col-md-3 logo">
+                            <img src="{% static 'images/logo.jpg' %}" alt="">
+                        </div>
+                        <div class="col-md-9 nav-col">
+                            <nav class="navbar navbar-expand-lg navbar-light">
+
+                                <button
+                                    class="navbar-toggler"
+                                    type="button"
+                                    data-toggle="collapse"
+                                    data-target="#navbarNav"
+                                    aria-controls="navbarNav"
+                                    aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="#home">Home
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#about">About Us</a>
+                                        </li>
+                                       
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#process">Process</a>
+                                        </li>
+                                         <li class="nav-item">
+                                            <a class="nav-link" href="{% url 'pst' %}">Post Now</a>
+                                        </li>
+                                        
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{% url 'donate' %}">Donors</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#contact">Contact Us</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        
+    <!-- ################# Slider Starts Here#######################--->
+
+    <div class="slider-detail">
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="{% static 'images/slider/slide-02.jpg' %}" alt="First slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class=" bounceInDown">Donate Blood & Save a Life</h5>
+                        <p class=" bounceInLeft">"The blood you donate gives someone another chance at life. One day the someone may be a close relative, a friend, a loved one  or even you"
+                        </p>
+
+                        <div class=" vbh">
+
+                           
+                            <div> <a class="nav-link btn btn-success  bounceInUp" href="#contact">Contact US</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{% static 'images/slider/slide-03.jpg' %}" alt="Third slide">
+                    <div class="carousel-caption vdg-cur d-none d-md-block">
+                        <h5 class=" bounceInDown">Donate Blood & Save a Life</h5>
+                        <p class=" bounceInLeft">"Never refuse to donate blood if you can, as you may be the next Needy"</p>
+
+                        <div class=" vbh">
+
+                            <div><a class="nav-link btn btn-success  bounceInUp" href="#post"> Post Now </a></div>
+                            <div> <a class="nav-link btn btn-success  bounceInUp" href="#contact">Contact US</a></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <a class="carousel-control-prev" href="{% static '#carouselExampleIndicators' %}" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="{% static '#carouselExampleIndicators' %}" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+
+    </div>
+    
+    <!--*************** About Us Starts Here ***************-->
+   <section id="about" class="contianer-fluid about-us">
+       <div class="container">
+           <div class="row session-title">
+               <h2>About Us</h2>
+               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has</p>
+           </div>
+            <div class="row">
+                <div class="col-md-6 text">
+                    <h2>About Blood Doners</h2>
+                    <p>Blood Donors is a browser based system that is designed to store, process, retrieve and analyze information concerned with the administrative and inventory management within a blood bank.</p>
+                    <p>This project aims at maintaining all the information pertaining to blood donors, different blood groups available in each blood bank and help them manage in a better way. Aim is to provide transparency in this field, make the process of obtaining blood from a blood bank hassle free and corruption free and make the system of blood bank management effective.</p>
+                    
+                </div>
+                <div class="col-md-6 image">
+                    <img src="{% static 'images/about.jpg' %}" alt="">
+                </div>
+            </div>
+       </div>
+   </section>
+    
+          
+    
+      <!-- ################# Gallery Start Here #######################--->
+      <div id="post">
+      <center><li><a style="color:black; font-size:35px;">PATIENTS</a> </li></center>
+      </div>
+    <div >
+        <div class="row">
+            {% if mydata %}
+            {% for data in mydata %}
+            
+              
+            <div class="col-xs-2 col-sm-3 col-md-3"><img id="img" src="{% static 'images/gallery/g2.jpg' %}" class="img-responsive img-rounded" />
+               <p style="margin-left: 1.5em; color:black; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:larger">Name:{{data.Name}}</p>
+               <P style="margin-left: 1.5em;color:black; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:larger">Mobile No:{{data.Mobile}}</p>
+               <P style="margin-left: 1.5em;color:black; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:larger">Patient City:{{data.City}}</p>
+               <p style="margin-left: 1.0em;color:black; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:larger">Patient Area:{{data.Area}}</p>
+               <p style="margin-left: 1.5em;color:black; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:larger">Patient Blood Type:{{data.Type}}</p></div>
+         
+          
+          {% endfor %}
+          {% else %}
+         
+          {% endif %}
+
+        </div>
+    </div> 
+    
+           
+            
+        
+    </div>
+    
+    
+    
+     <!-- ################# Donation Process Start Here #######################--->
+     
+     <section id="process" class="donation-care">
+         <div class="container">
+           <div class="row session-title" style="position: center">
+               <h2>Donation Process</h2>
+              
+           </div>
+            <div class="row">
+                 <div class="col-md-3 col-sm-6 vd">
+                    <div class="bkjiu">
+                     <img src="{% static 'images/gallery/g1.jpg' %}" alt="">
+                     <h4><b>1 - </b>Registration</h4>
+                     <p>First register your details our team will connect with you if you got any donor for your post</p>
+                     <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+                     </div>
+                 </div>
+                 <div class="col-md-3 col-sm-6 vd">
+                    <div class="bkjiu">
+                     <img src="{% static 'images/gallery/g2.jpg' %}" alt="">
+                        <h4><b>2 - </b>Seeing</h4>
+                     <p>After you publish your post you post will shared wide if any donor near by your location then he or she will contact  you </p>
+                     <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+                     </div>
+                 </div>
+                 <div class="col-md-3 col-sm-6 vd">
+                    <div class="bkjiu">
+                     <img src="{% static 'images/gallery/g3.jpg' %}" alt="">
+                        <h4><b>3 - </b>Donors</h4>
+                     <p>If you are willing to donote blood you can post your details in our website so the person.who searching for a specific type blood can contact you and save a life </p>
+                     <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+                     </div>
+                 </div>
+                 <div class="col-md-3 col-sm-6 vd">
+                    <div class="bkjiu">
+                        <img src="{% static 'images/gallery/g4.jpg' %}" alt="">
+                        <h4><b>4 - </b>Save Life</h4>
+                         <p>If you are see a blood  donation post please share wide so we can save a life </p>
+                         <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+                    </div> 
+                 </div>
+            </div>
+            
+             
+         </div>
+        </section>
+
+     
+     
+
+   
+      <!--*************** Footer  Starts Here *************** -->
+    <footer id="contact" class="container-fluid">
+        <div class="container">
+            
+            <div class="row content-ro">
+                <div class="col-lg-4 col-md-12 footer-contact">
+                    <h2>Contact Informatins</h2>
+                    <div class="address-row">
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="detail">
+                            <p>Tirunelveli-627001, Tamil Nadu, India</p>
+                        </div>
+                    </div>
+                    <div class="address-row">
+                        <div class="icon">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <div class="detail">
+                            <p>ashikcareer6444@gmail.com <br> </p>
+                        </div>
+                    </div>
+                    <div class="address-row">
+                        <div class="icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="detail">
+                            <p>+91 9626966444 <br> +91 7305388180</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 footer-links">
+                   <div class="row no-margin mt-2">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li>Home</li>
+                        <li>About Us</li>
+                        <li>Contacts</li>
+                        <li>Post</li>
+                        <li>Gallery</li>
+                        <li>Donate</li>
+
+                    </ul>
+                    </div>
+                   
+
+                </div>
+                <div class="col-lg-4 col-md-12 footer-form" action="/msg" >
+                    <div class="form-card" >
+                        <div class="form-title" >
+                            <h4>Quick Message</h4>
+                        </div>
+                        <div  class="form-body">
+                            <input type="text" placeholder="Enter Name" class="form-control">
+                            <input type="text" placeholder="Enter Mobile no" class="form-control">
+                            <input type="text" placeholder="Enter Email Address" class="form-control">
+                            <input type="text" placeholder="Your Message" class="form-control">
+                            <button class="btn btn-sm btn-primary w-100"  type="submit">Send Request</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copy">
+                <div class="row">
+                    <div class="col-lg-8 col-md-6">
+                        <p>Copyright © <a href="#"></a> | All right reserved.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 socila-link">
+                        <ul>
+                            <li><a><i class="fab fa-github"></i></a></li>
+                            <li><a><i class="fab fa-google-plus-g"></i></a></li>
+                           
+                            <li><a><i class="fab fa-twitter"></i></a></li>
+                            <li><a><i class="fab fa-facebook-f"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+</body>
+
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'plugins/grid-gallery/js/grid-gallery.min.js' %}"></script>
+    <script src="{% static 'plugins/scroll-fixed/jquery-scrolltofixed-min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</html>
